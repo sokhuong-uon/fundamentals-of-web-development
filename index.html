@@ -3,9 +3,639 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Flexbox Lesson</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <header class="lesson-header">
+      <h1>Flexbox Lesson</h1>
+      <p>Learn the fundamentals of CSS Flexbox layout</p>
+    </header>
+
+    <main class="lesson-container">
+      <!-- Section 1: Basic Flexbox -->
+      <section class="lesson-section">
+        <h2>1. Basic Flexbox Container</h2>
+        <p>
+          Use <code>display: flex</code> to create a flex container. All direct
+          children become flex items.
+        </p>
+
+        <div class="property-explanation">
+          <h4>display: flex</h4>
+          <p>
+            This property makes an element a flex container. The element becomes
+            a block-level flex container box.
+          </p>
+          <div class="syntax">display: flex;</div>
+        </div>
+
+        <div class="flex-demo basic-flex">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="container"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.container {
+  display: flex;
+  /* Items will flow horizontally by default */
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Flex Direction -->
+      <section class="lesson-section">
+        <h2>2. Flex Direction</h2>
+        <p>
+          Control the direction of flex items with <code>flex-direction</code>
+        </p>
+
+        <div class="property-explanation">
+          <h4>flex-direction</h4>
+          <p>
+            Sets the direction of the main axis. Determines how flex items are
+            placed in the flex container.
+          </p>
+          <div class="syntax">
+            flex-direction: row | row-reverse | column | column-reverse;
+          </div>
+        </div>
+
+        <h3>Row (default)</h3>
+        <div class="flex-demo flex-row">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-row"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-row {
+  display: flex;
+  flex-direction: row; /* Default value */
+}</code></pre>
+          </div>
+        </div>
+
+        <h3>Column</h3>
+        <div class="flex-demo flex-column">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-column"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-column {
+              display: flex;
+              flex-direction: column;
+              min-height: 200px; /* Needed for visual effect */
+            }</code></pre>
+          </div>
+        </div>
+
+        <h3>Row Reverse</h3>
+        <div class="flex-demo flex-row-reverse">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-row-reverse"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-row-reverse {
+              display: flex;
+              flex-direction: row-reverse;
+            }</code></pre>
+          </div>
+        </div>
+
+        <h3>Column Reverse</h3>
+        <div class="flex-demo flex-column-reverse">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-column-reverse"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-column-reverse {
+              display: flex;
+              flex-direction: column-reverse;
+              min-height: 200px;
+            }</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Justify Content -->
+      <section class="lesson-section">
+        <h2>3. Justify Content</h2>
+        <p>Align items along the main axis with <code>justify-content</code></p>
+
+        <div class="property-explanation">
+          <h4>justify-content</h4>
+          <p>
+            Defines how the browser distributes space between and around content
+            items along the main axis of a flex container.
+          </p>
+          <div class="syntax">
+            justify-content: flex-start | center | flex-end | space-between |
+            space-around | space-evenly;
+          </div>
+        </div>
+
+        <h3>Flex Start (default)</h3>
+        <div class="flex-demo justify-start">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-start {
+  display: flex;
+  justify-content: flex-start; /* Default value */
+}</code></pre>
+        </div>
+
+        <h3>Center</h3>
+        <div class="flex-demo justify-center">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-center {
+  display: flex;
+  justify-content: center;
+}</code></pre>
+        </div>
+
+        <h3>Flex End</h3>
+        <div class="flex-demo justify-end">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}</code></pre>
+        </div>
+
+        <h3>Space Between</h3>
+        <div class="flex-demo justify-between">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-between {
+  display: flex;
+  justify-content: space-between;
+  /* Items are evenly distributed with first at start, last at end */
+}</code></pre>
+        </div>
+
+        <h3>Space Around</h3>
+        <div class="flex-demo justify-around">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-around {
+  display: flex;
+  justify-content: space-around;
+  /* Equal space around each item */
+}</code></pre>
+        </div>
+
+        <h3>Space Evenly</h3>
+        <div class="flex-demo justify-evenly">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.justify-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  /* Equal space between all items and edges */
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 4: Align Items -->
+      <section class="lesson-section">
+        <h2>4. Align Items</h2>
+        <p>Align items along the cross axis with <code>align-items</code></p>
+
+        <div class="property-explanation">
+          <h4>align-items</h4>
+          <p>
+            Defines the default behavior for how flex items are laid out along
+            the cross axis on the current line.
+          </p>
+          <div class="syntax">
+            align-items: stretch | flex-start | center | flex-end | baseline;
+          </div>
+        </div>
+
+        <h3>Stretch (default)</h3>
+        <div class="flex-demo align-stretch">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item tall">Item 2<br />Taller</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.align-stretch {
+  display: flex;
+  align-items: stretch; /* Default value */
+  /* Items stretch to fill container height */
+}</code></pre>
+        </div>
+
+        <h3>Flex Start</h3>
+        <div class="flex-demo align-start">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item tall">Item 2<br />Taller</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.align-start {
+  display: flex;
+  align-items: flex-start;
+  /* Items align to the start of cross axis */
+}</code></pre>
+        </div>
+
+        <h3>Center</h3>
+        <div class="flex-demo align-center">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item tall">Item 2<br />Taller</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.align-center {
+  display: flex;
+  align-items: center;
+  /* Items are centered along cross axis */
+}</code></pre>
+        </div>
+
+        <h3>Flex End</h3>
+        <div class="flex-demo align-end">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item tall">Item 2<br />Taller</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.align-end {
+  display: flex;
+  align-items: flex-end;
+  /* Items align to the end of cross axis */
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 5: Flex Wrap -->
+      <section class="lesson-section">
+        <h2>5. Flex Wrap</h2>
+        <p>Control how items wrap to new lines with <code>flex-wrap</code></p>
+
+        <div class="property-explanation">
+          <h4>flex-wrap</h4>
+          <p>
+            Sets whether flex items are forced onto one line or can wrap onto
+            multiple lines.
+          </p>
+          <div class="syntax">flex-wrap: nowrap | wrap | wrap-reverse;</div>
+        </div>
+
+        <h3>No Wrap (default)</h3>
+        <div class="flex-demo flex-nowrap" style="width: 500px">
+          <div class="flex-item wide">Item 1</div>
+          <div class="flex-item wide">Item 2</div>
+          <div class="flex-item wide">Item 3</div>
+          <div class="flex-item wide">Item 4</div>
+          <div class="flex-item wide">Item 5</div>
+        </div>
+        <div class="flex-demo flex-nowrap" style="width: 500px; overflow: auto">
+          <div class="flex-item wide">Item 1</div>
+          <div class="flex-item wide">Item 2</div>
+          <div class="flex-item wide">Item 3</div>
+          <div class="flex-item wide">Item 4</div>
+          <div class="flex-item wide">Item 5</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap; /* Default value */
+  /* Items may overflow container if we don't make it scrollable */
+}</code></pre>
+        </div>
+
+        <h3>Wrap</h3>
+        <div class="flex-demo flex-wrap" style="width: 500px">
+          <div class="flex-item wide">Item 1</div>
+          <div class="flex-item wide">Item 2</div>
+          <div class="flex-item wide">Item 3</div>
+          <div class="flex-item wide">Item 4</div>
+          <div class="flex-item wide">Item 5</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  /* Items wrap to new lines when needed */
+}</code></pre>
+        </div>
+
+        <h3>Wrap Reverse</h3>
+        <div class="flex-demo flex-wrap-reverse" style="width: 500px">
+          <div class="flex-item wide">Item 1</div>
+          <div class="flex-item wide">Item 2</div>
+          <div class="flex-item wide">Item 3</div>
+          <div class="flex-item wide">Item 4</div>
+          <div class="flex-item wide">Item 5</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.flex-wrap-reverse {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  /* Items wrap in reverse order */
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 6: Flex Properties -->
+      <section class="lesson-section">
+        <h2>6. Flex Item Properties</h2>
+        <p>
+          Control individual flex items with <code>flex-grow</code>,
+          <code>flex-shrink</code>, and <code>flex-basis</code>
+        </p>
+
+        <div class="property-explanation">
+          <h4>flex-grow, flex-shrink, flex-basis</h4>
+          <p>
+            These properties control how flex items grow, shrink, and their
+            initial size. Often used together as the shorthand
+            <code>flex</code>.
+          </p>
+          <div class="syntax">
+            flex: [grow] [shrink] [basis]; /* Shorthand */ flex-grow: [number];
+            /* Default: 0 */ flex-shrink: [number]; /* Default: 1 */ flex-basis:
+            [size]; /* Default: auto */
+          </div>
+        </div>
+
+        <h3>Flex Grow</h3>
+        <div class="flex-demo flex-grow-demo">
+          <div class="flex-item">Normal</div>
+          <div class="flex-item grow-2">Grow 2x</div>
+          <div class="flex-item">Normal</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.grow-2 {
+  flex-grow: 2; /* Takes 2x more space than others */
+}
+
+/* Other items have flex-grow: 0 (default) */</code></pre>
+        </div>
+
+        <h3>Flex Shrink</h3>
+        <div class="flex-demo flex-shrink-demo">
+          <div class="flex-item">Normal</div>
+          <div class="flex-item shrink-0">No Shrink</div>
+          <div class="flex-item">Normal</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.shrink-0 {
+  flex-shrink: 0; /* Won't shrink below its content size */
+}
+
+/* Other items have flex-shrink: 1 (default) */</code></pre>
+        </div>
+
+        <h3>Flex Basis</h3>
+        <div class="flex-demo flex-basis-demo">
+          <div class="flex-item">Auto</div>
+          <div class="flex-item basis-200">200px</div>
+          <div class="flex-item">Auto</div>
+        </div>
+        <div class="css-example">
+          <pre><code>.basis-200 {
+  flex-basis: 200px; /* Initial size before growing/shrinking */
+}
+
+/* Other items have flex-basis: auto (default) */</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 7: Real World Example -->
+      <section class="lesson-section">
+        <h2>7. Real World Example: Navigation Bar</h2>
+        <p>Here's how Flexbox is commonly used in navigation bars</p>
+
+        <div class="property-explanation">
+          <h4>Practical Application</h4>
+          <p>
+            Navigation bars are a perfect use case for Flexbox. They need to be
+            responsive, align items properly, and handle different screen sizes.
+          </p>
+          <div class="syntax">
+            /* Common navigation patterns */ .navbar { display: flex;
+            justify-content: space-between; } .nav-menu { display: flex; gap:
+            2rem; } .nav-actions { display: flex; gap: 1rem; }
+          </div>
+        </div>
+
+        <nav class="navbar">
+          <div class="nav-brand">Logo</div>
+          <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="btn">Login</button>
+            <button class="btn btn-primary">Sign Up</button>
+          </div>
+        </nav>
+
+        <div class="css-example">
+          <pre><code>.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 8: Interactive Challenge -->
+      <section class="lesson-section">
+        <h2>8. Interactive Challenge</h2>
+        <p>Try changing the flex properties below to see the results!</p>
+
+        <div class="property-explanation">
+          <h4>Experiment & Learn</h4>
+          <p>
+            Use the controls below to experiment with different flex properties.
+            This helps you understand how they work together.
+          </p>
+        </div>
+
+        <div class="challenge-controls">
+          <label>
+            Flex Direction:
+            <select id="flexDirection">
+              <option value="row">Row</option>
+              <option value="column">Column</option>
+              <option value="row-reverse">Row Reverse</option>
+              <option value="column-reverse">Column Reverse</option>
+            </select>
+          </label>
+
+          <label>
+            Justify Content:
+            <select id="justifyContent">
+              <option value="flex-start">Flex Start</option>
+              <option value="center">Center</option>
+              <option value="flex-end">Flex End</option>
+              <option value="space-between">Space Between</option>
+              <option value="space-around">Space Around</option>
+              <option value="space-evenly">Space Evenly</option>
+            </select>
+          </label>
+
+          <label>
+            Align Items:
+            <select id="alignItems">
+              <option value="stretch">Stretch</option>
+              <option value="flex-start">Flex Start</option>
+              <option value="center">Center</option>
+              <option value="flex-end">Flex End</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="flex-demo challenge-demo" id="challengeDemo">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+
+        <div class="css-example">
+          <pre><code>/* Current applied styles: */
+#challengeDemo {
+  display: flex;
+  flex-direction: <span id="currentDirection">row</span>;
+  justify-content: <span id="currentJustify">flex-start</span>;
+  align-items: <span id="currentAlign">stretch</span>;
+}</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lesson-footer">
+      <p>🎉 Congratulations! You've learned the fundamentals of Flexbox!</p>
+    </footer>
+
+    <script>
+      // Interactive challenge functionality
+      const flexDirection = document.getElementById("flexDirection");
+      const justifyContent = document.getElementById("justifyContent");
+      const alignItems = document.getElementById("alignItems");
+      const challengeDemo = document.getElementById("challengeDemo");
+
+      // Elements to update the code display
+      const currentDirection = document.getElementById("currentDirection");
+      const currentJustify = document.getElementById("currentJustify");
+      const currentAlign = document.getElementById("currentAlign");
+
+      function updateChallenge() {
+        challengeDemo.style.flexDirection = flexDirection.value;
+        challengeDemo.style.justifyContent = justifyContent.value;
+        challengeDemo.style.alignItems = alignItems.value;
+
+        // Update the code display
+        currentDirection.textContent = flexDirection.value;
+        currentJustify.textContent = justifyContent.value;
+        currentAlign.textContent = alignItems.value;
+      }
+
+      flexDirection.addEventListener("change", updateChallenge);
+      justifyContent.addEventListener("change", updateChallenge);
+      alignItems.addEventListener("change", updateChallenge);
+    </script>
   </body>
 </html>
