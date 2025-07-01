@@ -224,10 +224,10 @@
           <div class="css-example">
             <span class="code-badge">CSS Code</span>
             <pre><code>.flex-column {
-              display: flex;
-              flex-direction: column;
-              min-height: 200px; /* Needed for visual effect */
-            }</code></pre>
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; /* Needed for visual effect */
+}</code></pre>
           </div>
         </div>
 
@@ -251,9 +251,9 @@
           <div class="css-example">
             <span class="code-badge">CSS Code</span>
             <pre><code>.flex-row-reverse {
-              display: flex;
-              flex-direction: row-reverse;
-            }</code></pre>
+   display: flex;
+   flex-direction: row-reverse;
+}</code></pre>
           </div>
         </div>
 
@@ -277,10 +277,10 @@
           <div class="css-example">
             <span class="code-badge">CSS Code</span>
             <pre><code>.flex-column-reverse {
-              display: flex;
-              flex-direction: column-reverse;
-              min-height: 200px;
-            }</code></pre>
+   display: flex;
+   flex-direction: column-reverse;
+   min-height: 200px;
+}</code></pre>
           </div>
         </div>
       </section>
@@ -308,11 +308,24 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-start {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-start"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-start {
   display: flex;
   justify-content: flex-start; /* Default value */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Center</h3>
@@ -321,11 +334,24 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-center {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-center"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-center {
   display: flex;
   justify-content: center;
 }</code></pre>
+          </div>
         </div>
 
         <h3>Flex End</h3>
@@ -334,11 +360,24 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-end {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-end"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-end {
   display: flex;
   justify-content: flex-end;
 }</code></pre>
+          </div>
         </div>
 
         <h3>Space Between</h3>
@@ -347,12 +386,25 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-between {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-between"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-between {
   display: flex;
   justify-content: space-between;
   /* Items are evenly distributed with first at start, last at end */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Space Around</h3>
@@ -361,12 +413,25 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-around {
-  display: flex;
-  justify-content: space-around;
-  /* Equal space around each item */
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-around"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-around {
+   display: flex;
+   justify-content: space-around;
+   /* Equal space around each item */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Space Evenly</h3>
@@ -375,12 +440,25 @@
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.justify-evenly {
-  display: flex;
-  justify-content: space-evenly;
-  /* Equal space between all items and edges */
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="justify-evenly"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.justify-evenly {
+   display: flex;
+   justify-content: space-evenly;
+   /* Equal space between all items and edges */
 }</code></pre>
+          </div>
         </div>
       </section>
 
@@ -406,12 +484,25 @@
           <div class="flex-item tall">Item 2<br />Taller</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.align-stretch {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="align-stretch"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.align-stretch {
   display: flex;
   align-items: stretch; /* Default value */
   /* Items stretch to fill container height */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Flex Start</h3>
@@ -420,12 +511,25 @@
           <div class="flex-item tall">Item 2<br />Taller</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.align-start {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="align-start"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.align-start {
   display: flex;
   align-items: flex-start;
   /* Items align to the start of cross axis */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Center</h3>
@@ -434,12 +538,25 @@
           <div class="flex-item tall">Item 2<br />Taller</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.align-center {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="align-center"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.align-center {
   display: flex;
   align-items: center;
   /* Items are centered along cross axis */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Flex End</h3>
@@ -448,12 +565,25 @@
           <div class="flex-item tall">Item 2<br />Taller</div>
           <div class="flex-item">Item 3</div>
         </div>
-        <div class="css-example">
-          <pre><code>.align-end {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="align-end"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.align-end {
   display: flex;
   align-items: flex-end;
   /* Items align to the end of cross axis */
 }</code></pre>
+          </div>
         </div>
       </section>
 
@@ -486,12 +616,27 @@
           <div class="flex-item wide">Item 4</div>
           <div class="flex-item wide">Item 5</div>
         </div>
-        <div class="css-example">
-          <pre><code>.flex-nowrap {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-nowrap"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+  &lt;div&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-nowrap {
   display: flex;
   flex-wrap: nowrap; /* Default value */
   /* Items may overflow container if we don't make it scrollable */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Wrap</h3>
@@ -502,12 +647,27 @@
           <div class="flex-item wide">Item 4</div>
           <div class="flex-item wide">Item 5</div>
         </div>
-        <div class="css-example">
-          <pre><code>.flex-wrap {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-wrap"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+  &lt;div&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-wrap {
   display: flex;
   flex-wrap: wrap;
   /* Items wrap to new lines when needed */
 }</code></pre>
+          </div>
         </div>
 
         <h3>Wrap Reverse</h3>
@@ -518,12 +678,27 @@
           <div class="flex-item wide">Item 4</div>
           <div class="flex-item wide">Item 5</div>
         </div>
-        <div class="css-example">
-          <pre><code>.flex-wrap-reverse {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-wrap-reverse"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+  &lt;div&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.flex-wrap-reverse {
   display: flex;
   flex-wrap: wrap-reverse;
   /* Items wrap in reverse order */
 }</code></pre>
+          </div>
         </div>
       </section>
 
@@ -555,12 +730,25 @@
           <div class="flex-item grow-2">Grow 2x</div>
           <div class="flex-item">Normal</div>
         </div>
-        <div class="css-example">
-          <pre><code>.grow-2 {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-grow-demo"&gt;
+  &lt;div&gt;Normal&lt;/div&gt;
+  &lt;div class="grow-2"&gt;Grow 2x&lt;/div&gt;
+  &lt;div&gt;Normal&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.grow-2 {
   flex-grow: 2; /* Takes 2x more space than others */
 }
 
 /* Other items have flex-grow: 0 (default) */</code></pre>
+          </div>
         </div>
 
         <h3>Flex Shrink</h3>
@@ -569,12 +757,25 @@
           <div class="flex-item shrink-0">No Shrink</div>
           <div class="flex-item">Normal</div>
         </div>
-        <div class="css-example">
-          <pre><code>.shrink-0 {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-shrink-demo"&gt;
+  &lt;div&gt;Normal&lt;/div&gt;
+  &lt;div class="shrink-0"&gt;No Shrink&lt;/div&gt;
+  &lt;div&gt;Normal&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.shrink-0 {
   flex-shrink: 0; /* Won't shrink below its content size */
 }
 
 /* Other items have flex-shrink: 1 (default) */</code></pre>
+          </div>
         </div>
 
         <h3>Flex Basis</h3>
@@ -583,12 +784,25 @@
           <div class="flex-item basis-200">200px</div>
           <div class="flex-item">Auto</div>
         </div>
-        <div class="css-example">
-          <pre><code>.basis-200 {
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;div class="flex-basis-demo"&gt;
+  &lt;div&gt;Auto&lt;/div&gt;
+  &lt;div class="basis-200"&gt;200px&lt;/div&gt;
+  &lt;div&gt;Auto&lt;/div&gt;
+&lt;/div&gt;</pre
+            >
+          </div>
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.basis-200 {
   flex-basis: 200px; /* Initial size before growing/shrinking */
 }
 
 /* Other items have flex-basis: auto (default) */</code></pre>
+          </div>
         </div>
       </section>
 
@@ -623,9 +837,29 @@
             <button class="btn btn-primary">Sign Up</button>
           </div>
         </nav>
+        <div class="code-example">
+          <div class="html-example">
+            <span class="html-badge">HTML Code</span>
+            <pre>
+&lt;nav class="navbar"&gt;
+  &lt;div class="nav-brand"&gt;Logo&lt;/div&gt;
+  &lt;ul class="nav-menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class="nav-actions"&gt;
+    &lt;button class="btn"&gt;Login&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Sign Up&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</pre
+            >
+          </div>
 
-        <div class="css-example">
-          <pre><code>.navbar {
+          <div class="css-example">
+            <span class="code-badge">CSS Code</span>
+            <pre><code>.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -642,12 +876,13 @@
   display: flex;
   gap: 1rem;
 }</code></pre>
+          </div>
         </div>
       </section>
 
       <!-- Section 8: Interactive Challenge -->
       <section class="lesson-section">
-        <h2>8. Interactive Challenge</h2>
+        <h2>8. Interactive UI</h2>
         <p>Try changing the flex properties below to see the results!</p>
 
         <div class="property-explanation">
@@ -692,13 +927,18 @@
           </label>
         </div>
 
-        <div class="flex-demo challenge-demo" id="challengeDemo">
+        <div
+          class="flex-demo challenge-demo"
+          id="challengeDemo"
+          style="height: 400px"
+        >
           <div class="flex-item">Item 1</div>
           <div class="flex-item">Item 2</div>
           <div class="flex-item">Item 3</div>
         </div>
 
         <div class="css-example">
+          <span class="code-badge">CSS Code</span>
           <pre><code>/* Current applied styles: */
 #challengeDemo {
   display: flex;
