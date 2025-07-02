@@ -1,0 +1,101 @@
+/* 
+  Reset some default Global Styles
+*/
+* { /* `*` is a wildcard selector that matches all elements */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ Select elements based on their tag name
+*/
+body { /* Select an HTML tag: `body`*/
+  font-family: sans-serif; /* Set the font family for the entire page */
+}
+
+/*
+ Select elements based on their `id` attribute using the `#` symbol
+*/
+#main-nav { /* Select a specific HTML element with the id `main-nav` */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 64px;
+  padding: 0 32px;
+  background: #fff;
+}
+
+#nav-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+
+#vercel-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+}
+
+#nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+}
+
+#nav-button-group {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/*
+ Select elements based on their `class` attribute using the `.` symbol
+*/
+.nav-bar-list-item {
+  padding: 0;
+  border: none;
+  background: none;
+}
+ /*
+ Select an HTML element with the class `nav-bar-list-item` and then select an HTML element with the tag `a` inside of it
+  `a` is a descendant of `nav-bar-list-item`
+*/
+.nav-bar-list-item a {
+  text-decoration: none;
+  color: #666;
+  font-size: 1.05rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.arrow {
+  font-size: 0.7em;
+  margin-left: 2px;
+}
+
+.nav-btn {
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1.5px solid #e5e5e5;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border 0.15s;
+}
+
+.nav-btn-outline {
+  background: #fff;
+  color: #111;
+  border: 1.5px solid #e5e5e5;
+}
+
+.nav-btn-black {
+  background: #111;
+  color: #fff;
+  border: 1.5px solid #111;
+}
