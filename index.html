@@ -3,983 +3,331 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flexbox Lesson</title>
+    <title>CSS Grid Tutorial</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="lesson-header">
-      <h1>Flexbox Lesson</h1>
-      <p>Learn the fundamentals of CSS Flexbox layout</p>
+    <header>
+      <h1>CSS Grid Tutorial</h1>
+      <p>Learn the fundamentals of CSS Grid Layout</p>
     </header>
 
-    <!-- Flexbox Axes Graphic -->
-    <section
-      class="axes-graphic-section"
-      style="display: flex; justify-content: center; margin-bottom: 2rem"
-    >
-      <figure
-        style="
-          background: #23272f;
-          border-radius: 16px;
-          padding: 2rem 2.5rem;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-          border: 1px solid #4a5568;
-        "
-      >
-        <svg
-          width="370"
-          height="280"
-          viewBox="0 0 370 180"
-          style="display: block; margin: 0 auto"
-        >
-          <!-- Flex container -->
-          <rect
-            x="60"
-            y="60"
-            width="220"
-            height="60"
-            rx="12"
-            fill="#2d3748"
-            stroke="#667eea"
-            stroke-width="2"
-          />
-          <!-- Flex items -->
-          <rect x="75" y="75" width="40" height="30" rx="6" fill="#667eea" />
-          <rect x="130" y="75" width="40" height="30" rx="6" fill="#38b2ac" />
-          <rect x="185" y="75" width="40" height="30" rx="6" fill="#764ba2" />
-          <rect x="240" y="75" width="40" height="30" rx="6" fill="#e53e3e" />
-          <!-- Main axis arrow -->
-          <line
-            x1="70"
-            y1="140"
-            x2="270"
-            y2="140"
-            stroke="#f6e05e"
-            stroke-width="4"
-          />
-          <text
-            x="170"
-            y="165"
-            text-anchor="middle"
-            fill="#f6e05e"
-            font-size="0.9em"
-            font-weight="bold"
-          >
-            Main Axis
-          </text>
-          <!-- Cross axis arrow -->
-          <line
-            x1="320"
-            y1="50"
-            x2="320"
-            y2="130"
-            stroke="#63b3ed"
-            stroke-width="4"
-          />
-          <text
-            x="335"
-            y="50"
-            fill="#63b3ed"
-            font-size="0.9em"
-            font-weight="bold"
-            writing-mode="vertical-rl"
-            style="letter-spacing: 2px"
-          >
-            Cross Axis
-          </text>
-          <defs>
-            <marker
-              id="arrowhead"
-              markerWidth="8"
-              markerHeight="8"
-              refX="4"
-              refY="4"
-              orient="auto"
-              markerUnits="strokeWidth"
-            >
-              <polygon points="0,0 8,4 0,8" fill="currentColor" />
-            </marker>
-          </defs>
-        </svg>
-        <figcaption
-          style="
-            color: #a0aec0;
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: 1rem;
-          "
-        >
-          <strong>Main Axis</strong> (yellow) is the direction flex items flow
-          (default: row).<br />
-          <strong>Cross Axis</strong> (blue) is perpendicular to the main axis.
-        </figcaption>
-      </figure>
-    </section>
-
-    <main class="lesson-container">
-      <!-- Section 1: Basic Flexbox -->
+    <main>
       <section class="lesson-section">
-        <h2>1. Basic Flexbox Container</h2>
+        <h2>What is CSS Grid?</h2>
         <p>
-          Use <code>display: flex</code> to create a flex container. All direct
-          children become flex items.
+          CSS Grid is a powerful layout system that allows you to create
+          two-dimensional layouts with rows and columns. It's perfect for
+          creating complex web layouts!
         </p>
 
-        <div class="property-explanation">
-          <h4>display: flex</h4>
-          <p>
-            This property makes an element a flex container. The element becomes
-            a block-level flex container box.
-          </p>
-          <div class="syntax">display: flex;</div>
-        </div>
-
-        <div class="flex-demo basic-flex">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="container"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.container {
-  display: flex;
-  /* Items will flow horizontally by default */
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Flex Direction -->
-      <section class="lesson-section">
-        <h2>2. Flex Direction</h2>
-        <p>
-          Control the direction of flex items with <code>flex-direction</code>
-        </p>
-
-        <div class="property-explanation">
-          <h4>flex-direction</h4>
-          <p>
-            Sets the direction of the main axis. Determines how flex items are
-            placed in the flex container.
-          </p>
-          <div class="syntax">
-            flex-direction: row | row-reverse | column | column-reverse;
-          </div>
-        </div>
-
-        <h3>Row (default)</h3>
-        <div class="flex-demo flex-row">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-row"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-row {
-  display: flex;
-  flex-direction: row; /* Default value */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Column</h3>
-        <div class="flex-demo flex-column">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-column"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-column {
-    display: flex;
-    flex-direction: column;
-    min-height: 200px; /* Needed for visual effect */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Row Reverse</h3>
-        <div class="flex-demo flex-row-reverse">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-row-reverse"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-row-reverse {
-   display: flex;
-   flex-direction: row-reverse;
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Column Reverse</h3>
-        <div class="flex-demo flex-column-reverse">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-column-reverse"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-column-reverse {
-   display: flex;
-   flex-direction: column-reverse;
-   min-height: 200px;
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 3: Justify Content -->
-      <section class="lesson-section">
-        <h2>3. Justify Content</h2>
-        <p>Align items along the main axis with <code>justify-content</code></p>
-
-        <div class="property-explanation">
-          <h4>justify-content</h4>
-          <p>
-            Defines how the browser distributes space between and around content
-            items along the main axis of a flex container.
-          </p>
-          <div class="syntax">
-            justify-content: flex-start | center | flex-end | space-between |
-            space-around | space-evenly;
-          </div>
-        </div>
-
-        <h3>Flex Start (default)</h3>
-        <div class="flex-demo justify-start">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-start"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-start {
-  display: flex;
-  justify-content: flex-start; /* Default value */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Center</h3>
-        <div class="flex-demo justify-center">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-center"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-center {
-  display: flex;
-  justify-content: center;
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Flex End</h3>
-        <div class="flex-demo justify-end">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-end"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-end {
-  display: flex;
-  justify-content: flex-end;
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Space Between</h3>
-        <div class="flex-demo justify-between">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-between"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-between {
-  display: flex;
-  justify-content: space-between;
-  /* Items are evenly distributed with first at start, last at end */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Space Around</h3>
-        <div class="flex-demo justify-around">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-around"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-around {
-   display: flex;
-   justify-content: space-around;
-   /* Equal space around each item */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Space Evenly</h3>
-        <div class="flex-demo justify-evenly">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="justify-evenly"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.justify-evenly {
-   display: flex;
-   justify-content: space-evenly;
-   /* Equal space between all items and edges */
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 4: Align Items -->
-      <section class="lesson-section">
-        <h2>4. Align Items</h2>
-        <p>Align items along the cross axis with <code>align-items</code></p>
-
-        <div class="property-explanation">
-          <h4>align-items</h4>
-          <p>
-            Defines the default behavior for how flex items are laid out along
-            the cross axis on the current line.
-          </p>
-          <div class="syntax">
-            align-items: stretch | flex-start | center | flex-end | baseline;
-          </div>
-        </div>
-
-        <h3>Stretch (default)</h3>
-        <div class="flex-demo align-stretch">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item tall">Item 2<br />Taller</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="align-stretch"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.align-stretch {
-  display: flex;
-  align-items: stretch; /* Default value */
-  /* Items stretch to fill container height */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Flex Start</h3>
-        <div class="flex-demo align-start">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item tall">Item 2<br />Taller</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="align-start"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.align-start {
-  display: flex;
-  align-items: flex-start;
-  /* Items align to the start of cross axis */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Center</h3>
-        <div class="flex-demo align-center">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item tall">Item 2<br />Taller</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="align-center"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.align-center {
-  display: flex;
-  align-items: center;
-  /* Items are centered along cross axis */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Flex End</h3>
-        <div class="flex-demo align-end">
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item tall">Item 2<br />Taller</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="align-end"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.align-end {
-  display: flex;
-  align-items: flex-end;
-  /* Items align to the end of cross axis */
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 5: Flex Wrap -->
-      <section class="lesson-section">
-        <h2>5. Flex Wrap</h2>
-        <p>Control how items wrap to new lines with <code>flex-wrap</code></p>
-
-        <div class="property-explanation">
-          <h4>flex-wrap</h4>
-          <p>
-            Sets whether flex items are forced onto one line or can wrap onto
-            multiple lines.
-          </p>
-          <div class="syntax">flex-wrap: nowrap | wrap | wrap-reverse;</div>
-        </div>
-
-        <h3>No Wrap (default)</h3>
-        <div class="flex-demo flex-nowrap" style="width: 500px">
-          <div class="flex-item wide">Item 1</div>
-          <div class="flex-item wide">Item 2</div>
-          <div class="flex-item wide">Item 3</div>
-          <div class="flex-item wide">Item 4</div>
-          <div class="flex-item wide">Item 5</div>
-        </div>
-        <div class="flex-demo flex-nowrap" style="width: 500px; overflow: auto">
-          <div class="flex-item wide">Item 1</div>
-          <div class="flex-item wide">Item 2</div>
-          <div class="flex-item wide">Item 3</div>
-          <div class="flex-item wide">Item 4</div>
-          <div class="flex-item wide">Item 5</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-nowrap"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-  &lt;div&gt;Item 4&lt;/div&gt;
-  &lt;div&gt;Item 5&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-nowrap {
-  display: flex;
-  flex-wrap: nowrap; /* Default value */
-  /* Items may overflow container if we don't make it scrollable */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Wrap</h3>
-        <div class="flex-demo flex-wrap" style="width: 500px">
-          <div class="flex-item wide">Item 1</div>
-          <div class="flex-item wide">Item 2</div>
-          <div class="flex-item wide">Item 3</div>
-          <div class="flex-item wide">Item 4</div>
-          <div class="flex-item wide">Item 5</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-wrap"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-  &lt;div&gt;Item 4&lt;/div&gt;
-  &lt;div&gt;Item 5&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  /* Items wrap to new lines when needed */
-}</code></pre>
-          </div>
-        </div>
-
-        <h3>Wrap Reverse</h3>
-        <div class="flex-demo flex-wrap-reverse" style="width: 500px">
-          <div class="flex-item wide">Item 1</div>
-          <div class="flex-item wide">Item 2</div>
-          <div class="flex-item wide">Item 3</div>
-          <div class="flex-item wide">Item 4</div>
-          <div class="flex-item wide">Item 5</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-wrap-reverse"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-  &lt;div&gt;Item 4&lt;/div&gt;
-  &lt;div&gt;Item 5&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.flex-wrap-reverse {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  /* Items wrap in reverse order */
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 6: Flex Properties -->
-      <section class="lesson-section">
-        <h2>6. Flex Item Properties</h2>
-        <p>
-          Control individual flex items with <code>flex-grow</code>,
-          <code>flex-shrink</code>, and <code>flex-basis</code>
-        </p>
-
-        <div class="property-explanation">
-          <h4>flex-grow, flex-shrink, flex-basis</h4>
-          <p>
-            These properties control how flex items grow, shrink, and their
-            initial size. Often used together as the shorthand
-            <code>flex</code>.
-          </p>
-          <div class="syntax">
-            flex: [grow] [shrink] [basis]; /* Shorthand */ flex-grow: [number];
-            /* Default: 0 */ flex-shrink: [number]; /* Default: 1 */ flex-basis:
-            [size]; /* Default: auto */
-          </div>
-        </div>
-
-        <h3>Flex Grow</h3>
-        <div class="flex-demo flex-grow-demo">
-          <div class="flex-item">Normal</div>
-          <div class="flex-item grow-2">Grow 2x</div>
-          <div class="flex-item">Normal</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-grow-demo"&gt;
-  &lt;div&gt;Normal&lt;/div&gt;
-  &lt;div class="grow-2"&gt;Grow 2x&lt;/div&gt;
-  &lt;div&gt;Normal&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.grow-2 {
-  flex-grow: 2; /* Takes 2x more space than others */
-}
-
-/* Other items have flex-grow: 0 (default) */</code></pre>
-          </div>
-        </div>
-
-        <h3>Flex Shrink</h3>
-        <div class="flex-demo flex-shrink-demo">
-          <div class="flex-item">Normal</div>
-          <div class="flex-item shrink-0">No Shrink</div>
-          <div class="flex-item">Normal</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-shrink-demo"&gt;
-  &lt;div&gt;Normal&lt;/div&gt;
-  &lt;div class="shrink-0"&gt;No Shrink&lt;/div&gt;
-  &lt;div&gt;Normal&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.shrink-0 {
-  flex-shrink: 0; /* Won't shrink below its content size */
-}
-
-/* Other items have flex-shrink: 1 (default) */</code></pre>
-          </div>
-        </div>
-
-        <h3>Flex Basis</h3>
-        <div class="flex-demo flex-basis-demo">
-          <div class="flex-item">Auto</div>
-          <div class="flex-item basis-200">200px</div>
-          <div class="flex-item">Auto</div>
-        </div>
-        <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;div class="flex-basis-demo"&gt;
-  &lt;div&gt;Auto&lt;/div&gt;
-  &lt;div class="basis-200"&gt;200px&lt;/div&gt;
-  &lt;div&gt;Auto&lt;/div&gt;
-&lt;/div&gt;</pre
-            >
-          </div>
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.basis-200 {
-  flex-basis: 200px; /* Initial size before growing/shrinking */
-}
-
-/* Other items have flex-basis: auto (default) */</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 7: Real World Example -->
-      <section class="lesson-section">
-        <h2>7. Real World Example: Navigation Bar</h2>
-        <p>Here's how Flexbox is commonly used in navigation bars</p>
-
-        <div class="property-explanation">
-          <h4>Practical Application</h4>
-          <p>
-            Navigation bars are a perfect use case for Flexbox. They need to be
-            responsive, align items properly, and handle different screen sizes.
-          </p>
-          <div class="syntax">
-            /* Common navigation patterns */ .navbar { display: flex;
-            justify-content: space-between; } .nav-menu { display: flex; gap:
-            2rem; } .nav-actions { display: flex; gap: 1rem; }
-          </div>
-        </div>
-
-        <nav class="navbar">
-          <div class="nav-brand">Logo</div>
-          <ul class="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+        <div class="concept-box">
+          <h3>Key Concepts:</h3>
+          <ul>
+            <li>
+              <strong>Grid Container:</strong> The parent element that holds the
+              grid
+            </li>
+            <li>
+              <strong>Grid Items:</strong> The direct children of the grid
+              container
+            </li>
+            <li>
+              <strong>Grid Lines:</strong> The dividing lines that make up the
+              grid structure
+            </li>
+            <li>
+              <strong>Grid Tracks:</strong> The spaces between grid lines (rows
+              and columns)
+            </li>
+            <li>
+              <strong>Grid Cells:</strong> The space between four grid lines
+            </li>
           </ul>
-          <div class="nav-actions">
-            <button class="btn">Login</button>
-            <button class="btn btn-primary">Sign Up</button>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>1. Basic Grid Setup</h2>
+        <p>Let's start with a simple 3x3 grid:</p>
+
+        <div class="example-container">
+          <div class="grid-example basic-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
           </div>
-        </nav>
+        </div>
+
         <div class="code-example">
-          <div class="html-example">
-            <span class="html-badge">HTML Code</span>
-            <pre>
-&lt;nav class="navbar"&gt;
-  &lt;div class="nav-brand"&gt;Logo&lt;/div&gt;
-  &lt;ul class="nav-menu"&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div class="nav-actions"&gt;
-    &lt;button class="btn"&gt;Login&lt;/button&gt;
-    &lt;button class="btn btn-primary"&gt;Sign Up&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</pre
-            >
-          </div>
-
-          <div class="css-example">
-            <span class="code-badge">CSS Code</span>
-            <pre><code>.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-actions {
-  display: flex;
-  gap: 1rem;
+          <h4>CSS Code:</h4>
+          <pre><code>.basic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  gap: 10px;
 }</code></pre>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>2. Grid Template Areas</h2>
+        <p>Create layouts using named areas for better organization:</p>
+
+        <div class="example-container">
+          <div class="grid-example area-grid">
+            <div class="grid-item header">Header</div>
+            <div class="grid-item sidebar">Sidebar</div>
+            <div class="grid-item main">Main Content</div>
+            <div class="grid-item footer">Footer</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h4>CSS Code:</h4>
+          <pre><code>.area-grid {
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 80px 200px 80px;
+  gap: 10px;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>3. Responsive Grid</h2>
+        <p>Create responsive layouts that adapt to different screen sizes:</p>
+
+        <div class="example-container">
+          <div class="grid-example responsive-grid">
+            <div class="grid-item">Card 1</div>
+            <div class="grid-item">Card 2</div>
+            <div class="grid-item">Card 3</div>
+            <div class="grid-item">Card 4</div>
+            <div class="grid-item">Card 5</div>
+            <div class="grid-item">Card 6</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h4>CSS Code:</h4>
+          <pre><code>.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>4. Grid Alignment</h2>
+        <p>Control how items are positioned within their grid areas:</p>
+
+        <div class="example-container">
+          <div class="grid-example alignment-grid">
+            <div class="grid-item align-start">Start</div>
+            <div class="grid-item align-center">Center</div>
+            <div class="grid-item align-end">End</div>
+            <div class="grid-item align-stretch">Stretch</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h4>CSS Code:</h4>
+          <pre><code>.alignment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 150px;
+  gap: 10px;
+  align-items: center;
+}
+
+.align-start { justify-self: start; }
+.align-center { justify-self: center; }
+.align-end { justify-self: end; }
+.align-stretch { justify-self: stretch; }</code></pre>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>5. Grid Spanning</h2>
+        <p>Make items span multiple rows or columns:</p>
+
+        <div class="example-container">
+          <div class="grid-example spanning-grid">
+            <div class="grid-item span-2">Spans 2 columns</div>
+            <div class="grid-item">Normal</div>
+            <div class="grid-item span-row">Spans 2 rows</div>
+            <div class="grid-item">Normal</div>
+            <div class="grid-item span-both">Spans both</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h4>CSS Code:</h4>
+          <pre><code>.spanning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.span-2 { grid-column: span 2; }
+.span-row { grid-row: span 2; }
+.span-both { 
+  grid-column: span 2; 
+  grid-row: span 2; 
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <h2>6. Interactive Grid Builder</h2>
+        <p>Try building your own grid! Adjust the controls below:</p>
+
+        <div class="controls">
+          <div class="control-group">
+            <label for="columns">Columns:</label>
+            <input type="range" id="columns" min="1" max="6" value="3" />
+            <span id="columns-value">3</span>
+          </div>
+          <div class="control-group">
+            <label for="rows">Rows:</label>
+            <input type="range" id="rows" min="1" max="6" value="3" />
+            <span id="rows-value">3</span>
+          </div>
+          <div class="control-group">
+            <label for="gap">Gap:</label>
+            <input type="range" id="gap" min="0" max="30" value="10" />
+            <span id="gap-value">10px</span>
+          </div>
+        </div>
+
+        <div class="example-container">
+          <div class="grid-example interactive-grid" id="interactive-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
           </div>
         </div>
       </section>
 
-      <!-- Section 8: Interactive Challenge -->
       <section class="lesson-section">
-        <h2>8. Interactive UI</h2>
-        <p>Try changing the flex properties below to see the results!</p>
+        <h2>Practice Exercises</h2>
+        <div class="exercises">
+          <div class="exercise">
+            <h3>Exercise 1: Photo Gallery</h3>
+            <p>
+              Create a responsive photo gallery with 4 columns on desktop, 2 on
+              tablet, and 1 on mobile.
+            </p>
+            <div class="exercise-grid photo-gallery">
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+              <div class="photo">📷</div>
+            </div>
+          </div>
 
-        <div class="property-explanation">
-          <h4>Experiment & Learn</h4>
-          <p>
-            Use the controls below to experiment with different flex properties.
-            This helps you understand how they work together.
-          </p>
-        </div>
-
-        <div class="challenge-controls">
-          <label>
-            Flex Direction:
-            <select id="flexDirection">
-              <option value="row">Row</option>
-              <option value="column">Column</option>
-              <option value="row-reverse">Row Reverse</option>
-              <option value="column-reverse">Column Reverse</option>
-            </select>
-          </label>
-
-          <label>
-            Justify Content:
-            <select id="justifyContent">
-              <option value="flex-start">Flex Start</option>
-              <option value="center">Center</option>
-              <option value="flex-end">Flex End</option>
-              <option value="space-between">Space Between</option>
-              <option value="space-around">Space Around</option>
-              <option value="space-evenly">Space Evenly</option>
-            </select>
-          </label>
-
-          <label>
-            Align Items:
-            <select id="alignItems">
-              <option value="stretch">Stretch</option>
-              <option value="flex-start">Flex Start</option>
-              <option value="center">Center</option>
-              <option value="flex-end">Flex End</option>
-            </select>
-          </label>
-        </div>
-
-        <div
-          class="flex-demo challenge-demo"
-          id="challengeDemo"
-          style="height: 400px"
-        >
-          <div class="flex-item">Item 1</div>
-          <div class="flex-item">Item 2</div>
-          <div class="flex-item">Item 3</div>
-        </div>
-
-        <div class="css-example">
-          <span class="code-badge">CSS Code</span>
-          <pre><code>/* Current applied styles: */
-#challengeDemo {
-  display: flex;
-  flex-direction: <span id="currentDirection">row</span>;
-  justify-content: <span id="currentJustify">flex-start</span>;
-  align-items: <span id="currentAlign">stretch</span>;
-}</code></pre>
+          <div class="exercise">
+            <h3>Exercise 2: Dashboard Layout</h3>
+            <p>
+              Create a dashboard with header, sidebar, main content, and
+              multiple widget areas.
+            </p>
+            <div class="exercise-grid dashboard">
+              <div class="widget header-widget">Header</div>
+              <div class="widget sidebar-widget">Sidebar</div>
+              <div class="widget main-widget">Main Content</div>
+              <div class="widget widget-1">Widget 1</div>
+              <div class="widget widget-2">Widget 2</div>
+              <div class="widget widget-3">Widget 3</div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="lesson-footer">
-      <p>🎉 Congratulations! You've learned the fundamentals of Flexbox!</p>
+    <footer>
+      <p>CSS Grid Tutorial - Master the art of modern web layouts!</p>
     </footer>
 
     <script>
-      // Interactive challenge functionality
-      const flexDirection = document.getElementById("flexDirection");
-      const justifyContent = document.getElementById("justifyContent");
-      const alignItems = document.getElementById("alignItems");
-      const challengeDemo = document.getElementById("challengeDemo");
+      // Interactive grid controls
+      const columnsSlider = document.getElementById("columns");
+      const rowsSlider = document.getElementById("rows");
+      const gapSlider = document.getElementById("gap");
+      const interactiveGrid = document.getElementById("interactive-grid");
 
-      // Elements to update the code display
-      const currentDirection = document.getElementById("currentDirection");
-      const currentJustify = document.getElementById("currentJustify");
-      const currentAlign = document.getElementById("currentAlign");
+      const columnsValue = document.getElementById("columns-value");
+      const rowsValue = document.getElementById("rows-value");
+      const gapValue = document.getElementById("gap-value");
 
-      function updateChallenge() {
-        challengeDemo.style.flexDirection = flexDirection.value;
-        challengeDemo.style.justifyContent = justifyContent.value;
-        challengeDemo.style.alignItems = alignItems.value;
+      function updateGrid() {
+        const columns = columnsSlider.value;
+        const rows = rowsSlider.value;
+        const gap = gapSlider.value;
 
-        // Update the code display
-        currentDirection.textContent = flexDirection.value;
-        currentJustify.textContent = justifyContent.value;
-        currentAlign.textContent = alignItems.value;
+        interactiveGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+        interactiveGrid.style.gridTemplateRows = `repeat(${rows}, 80px)`;
+        interactiveGrid.style.gap = `${gap}px`;
+
+        columnsValue.textContent = columns;
+        rowsValue.textContent = rows;
+        gapValue.textContent = `${gap}px`;
+
+        // Update number of items
+        const totalItems = columns * rows;
+        const currentItems = interactiveGrid.children.length;
+
+        if (totalItems > currentItems) {
+          // Add more items
+          for (let i = currentItems + 1; i <= totalItems; i++) {
+            const newItem = document.createElement("div");
+            newItem.className = "grid-item";
+            newItem.textContent = i;
+            interactiveGrid.appendChild(newItem);
+          }
+        } else if (totalItems < currentItems) {
+          // Remove excess items
+          while (interactiveGrid.children.length > totalItems) {
+            interactiveGrid.removeChild(interactiveGrid.lastChild);
+          }
+        }
       }
 
-      flexDirection.addEventListener("change", updateChallenge);
-      justifyContent.addEventListener("change", updateChallenge);
-      alignItems.addEventListener("change", updateChallenge);
+      columnsSlider.addEventListener("input", updateGrid);
+      rowsSlider.addEventListener("input", updateGrid);
+      gapSlider.addEventListener("input", updateGrid);
+
+      // Initialize
+      updateGrid();
     </script>
   </body>
 </html>
