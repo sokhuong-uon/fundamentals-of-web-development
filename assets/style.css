@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.card {
+  font-size: 1rem;
+  border: 1px solid;
+}
+
+.card-detail {
+  width: 50%;
+  background-color: red;
+  display: none;
+}
+
+.card:hover .card-detail {
+  display: block;
+}
+
+.card:hover ~ .sibling-of-card {
+  color: red;
+}
