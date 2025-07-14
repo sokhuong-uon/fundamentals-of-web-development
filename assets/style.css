@@ -3,48 +3,26 @@
   padding: 0px;
 }
 
-:root {
-  font-size: 16px;
-}
-
 .container {
-  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 2fr;
 }
 
-.px {
-  font-size: 16px;
+.container div:first-child {
+  grid-area: 1/1/3/3;
 }
 
-.em {
-  font-size: 1em;
+.container div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.rem {
-  font-size: 1rem;
-}
-
-.text-container {
-  font-size: 1rem;
-}
-
-.btn {
-  font-size: 1rem;
-  padding: 0.25rem 0.25rem;
-  border-radius: 0.25rem;
-}
-
-@media (min-width: 1024px) {
-  .text-container {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .btn {
-    font-size: 2rem;
-  }
-
-  :root {
-    font-size: 64px;
+@media (min-width: 678px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
