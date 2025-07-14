@@ -3,21 +3,48 @@
   padding: 0px;
 }
 
-.card {
+:root {
+  font-size: 16px;
+}
+
+.container {
+  font-size: 2rem;
+}
+
+.px {
+  font-size: 16px;
+}
+
+.em {
+  font-size: 1em;
+}
+
+.rem {
   font-size: 1rem;
-  border: 1px solid;
 }
 
-.card-detail {
-  width: 50%;
-  background-color: red;
-  display: none;
+.text-container {
+  font-size: 1rem;
 }
 
-.card:hover .card-detail {
-  display: block;
+.btn {
+  font-size: 1rem;
+  padding: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
 }
 
-.card:hover ~ .sibling-of-card {
-  color: red;
+@media (min-width: 1024px) {
+  .text-container {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn {
+    font-size: 2rem;
+  }
+
+  :root {
+    font-size: 64px;
+  }
 }
