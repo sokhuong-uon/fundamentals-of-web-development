@@ -16,6 +16,15 @@
   background-color: cyan;
   padding: 0.5rem;
 }
+.iframe-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-list-item-1 {
+  display: flex;
+}
 
 @media (min-width: 1024px) {
   .nav-list {
