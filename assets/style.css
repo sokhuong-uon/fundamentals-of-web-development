@@ -4,8 +4,6 @@
 }
 
 :root {
-  color-scheme: light dark;
-
   --bg-primary: white;
   --bg-secondary: lightblue;
   --fg-primary: black;
@@ -20,19 +18,20 @@
 
 header {
   height: 3rem;
-  border: 1px dashed light-dark(var(--border-color), var(--dark-border-color));
+  /* border: 1px dashed light-dark(var(--border-color), var(--dark-border-color)); */
 }
 
 
 main {
   height: calc(100vh - 3rem);
   display: flex;
-  background-color: light-dark(var(--bg-primary), var(--dark-bg-primary));
+  /* background-color: light-dark(var(--bg-primary), var(--dark-bg-primary)); */
+  background-color: var(--bg-primary);
 }
 
 aside {
   width: 6rem;
-  background-color: light-dark(var(--bg-primary), var(--dark-bg-primary));
+  /* background-color: light-dark(var(--bg-primary), var(--dark-bg-primary)); */
 }
 
 ul {
@@ -45,6 +44,8 @@ li {
   border: 1px solid var(--border-color);
 }
 
-/* @media (prefer-color-scheme: dark) {
-
-} */
+@media (prefers-color-scheme: dark) {
+  main {
+    background-color: var(--dark-bg-primary);
+  }
+}
