@@ -3,6 +3,13 @@ const input = document.getElementById('new-todo')
 const todoList = document.getElementById('todos')
 console.log("todos list element: ",todoList)
 
+const addCloseButtonToTodoItem = (todoItem) => { 
+  const button = document.createElement('button')  
+  button.innerText = 'X'
+  
+  todoItem.append(button)
+}
+
 form.onsubmit = (event) => {
   event.preventDefault();
 
@@ -18,6 +25,10 @@ form.onsubmit = (event) => {
 
   // Add li to ul (todo list)
   todoList.append(li)
+  li.className = 'flex justify-between max-w-44'
+  
+  // Append X button to todo Item
+  addCloseButtonToTodoItem(li)
   
   // Clear input value
   input.value = ''
