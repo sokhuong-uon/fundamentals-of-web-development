@@ -1,6 +1,7 @@
 // variables
 const name = "Jonh"
 let age = 25
+var dob = '2025/04/01'
 
 const pets = ["dog", 'cats', 'pig']
 const person = {
