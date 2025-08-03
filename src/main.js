@@ -59,6 +59,10 @@ const prepareForm = (formElement, taskListSection, taskListElement) => {
     const newTask = values["new-task"];
 
     const todoItem = createTodoItem(newTask);
+    if (!todoItem) {
+      alert("Can't create empty task!");
+      return;
+    }
 
     taskListElement.prepend(todoItem);
 

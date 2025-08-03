@@ -3,6 +3,8 @@
  * @returns {HTMLLIElement} Todo item
  */
 export function createTodoItem(taskText) {
+  if (taskText === "") return;
+
   const todoItemTemplate = document.getElementById("todo-item-template");
   const todoItemElement = todoItemTemplate.content.cloneNode(true);
 
