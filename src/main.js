@@ -1,21 +1,38 @@
 import { createTodoItem } from "./create-todo-item";
 
 const addNewTodoButton = document.getElementById("add-new-todo-button");
+const addNewDoingTaskButton = document.getElementById("add-new-doing-task-button");
 
 addNewTodoButton.onclick = () => {
   const todoSection = document.getElementById("todo-section");
   todoSection.dataset.isAdding = true;
 
+  const todoListElement = document.getElementById("todos");
+
   const newTaskForm = document.getElementById("new-task-form");
-  prepareForm(newTaskForm);
+  prepareForm(newTaskForm, todoSection, todoListElement);
+
+  newTaskForm.children.namedItem("new-task").focus();
+};
+
+addNewDoingTaskButton.onclick = () => {
+  const todoSection = document.getElementById("doing-section");
+  todoSection.dataset.isAdding = true;
+
+  const doingTaskList = document.getElementById("doing-tasks");
+
+  const newTaskForm = document.getElementById("new-doing-task-form");
+  prepareForm(newTaskForm, todoSection, doingTaskList);
 
   newTaskForm.children.namedItem("new-task").focus();
 };
 
 /**
  * @param {HTMLFormElement} formElement
+ * @param {HTMLElement} taskListSection
+ * @param {HTMLUListElement} taskListElement
  */
-const prepareForm = (formElement) => {
+const prepareForm = (formElement, taskListSection, taskListElement) => {
   formElement.onsubmit = (submitEvent) => {
     submitEvent.preventDefault();
 
@@ -25,12 +42,10 @@ const prepareForm = (formElement) => {
 
     const todoItem = createTodoItem(newTask);
 
-    const todoList = document.getElementById("todos");
-    todoList.prepend(todoItem);
+    taskListElement.prepend(todoItem);
 
     formElement.reset();
 
-    const todoSection = document.getElementById("todo-section");
-    todoSection.dataset.isAdding = false;
+    taskListSection.dataset.isAdding = false;
   };
 };

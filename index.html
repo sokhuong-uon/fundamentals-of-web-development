@@ -57,6 +57,53 @@
             class="space-y-2 relative [&>*]:shadow [&>*]:p-2 empty:bg-gray-100 empty:h-12 rounded-sm empty:after:content-['Nothing_here'] empty:after:absolute empty:after:inset-0 empty:after:flex empty:after:items-center empty:after:justify-center empty:after:text-gray-500"
           ></ul>
         </section>
+
+        <section
+          data-is-adding="false"
+          id="doing-section"
+          class="p-2 group flex flex-col gap-4"
+        >
+          <h2>Doing</h2>
+          <button
+            id="add-new-doing-task-button"
+            class="group-data-[is-adding=true]:hidden text-blue-800 flex shadow w-full p-2 cursor-pointer rounded-sm hover:bg-gray-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+            Add task
+          </button>
+          <form
+            id="new-doing-task-form"
+            class="group-data-[is-adding=true]:flex hidden flex-col gap-2"
+          >
+            <input
+              type="text"
+              name="new-task"
+              class="shadow h-12 border-none ring-2 ring-blue-200 p-2"
+            />
+            <button
+              class="w-full p-2 bg-blue-800 text-white cursor-pointer hover:bg-blue-900"
+            >
+              Add task
+            </button>
+          </form>
+          <ul
+            id="doing-tasks"
+            class="space-y-2 relative [&>*]:shadow [&>*]:p-2 empty:bg-gray-100 empty:h-12 rounded-sm empty:after:content-['Nothing_here'] empty:after:absolute empty:after:inset-0 empty:after:flex empty:after:items-center empty:after:justify-center empty:after:text-gray-500"
+          ></ul>
+        </section>
       </div>
       <template id="todo-item-template">
         <li class="hover:bg-gray-50 flex">
