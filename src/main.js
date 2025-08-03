@@ -12,19 +12,37 @@ addNewTodoButton.onclick = () => {
   const newTaskForm = document.getElementById("new-task-form");
   prepareForm(newTaskForm, todoSection, todoListElement);
 
-  newTaskForm.children.namedItem("new-task").focus();
+  const newTaskInput = newTaskForm.children.namedItem("new-task");
+  newTaskInput.focus();
+
+  newTaskInput.onblur = (event) => {
+    const relatedTarget = event.relatedTarget;
+
+    if (!relatedTarget || !newTaskForm.contains(relatedTarget)) {
+      todoSection.dataset.isAdding = "false";
+    }
+  };
 };
 
 addNewDoingTaskButton.onclick = () => {
-  const todoSection = document.getElementById("doing-section");
-  todoSection.dataset.isAdding = true;
+  const doingSection = document.getElementById("doing-section");
+  doingSection.dataset.isAdding = true;
 
   const doingTaskList = document.getElementById("doing-tasks");
 
   const newTaskForm = document.getElementById("new-doing-task-form");
-  prepareForm(newTaskForm, todoSection, doingTaskList);
+  prepareForm(newTaskForm, doingSection, doingTaskList);
 
-  newTaskForm.children.namedItem("new-task").focus();
+  const newTaskInput = newTaskForm.children.namedItem("new-task");
+  newTaskInput.focus();
+
+  newTaskInput.onblur = (event) => {
+    const relatedTarget = event.relatedTarget;
+
+    if (!relatedTarget || !newTaskForm.contains(relatedTarget)) {
+      doingSection.dataset.isAdding = "false";
+    }
+  };
 };
 
 /**
