@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
+  <body class="dark:bg-black">
     <main>
-      <h1 class="text-2xl p-6 shadow">Software Management</h1>
+      <h1 class="text-2xl dark:text-white p-6 shadow">Software Management</h1>
       <div class="grid grid-cols-3 max-w-5xl min-w-[36rem] p-6 gap-4">
         <section
           data-is-adding="false"
           id="todo-section"
           class="p-2 group flex flex-col gap-4"
         >
-          <h2>Todo</h2>
+          <h2 class="dark:text-gray-200">Todo</h2>
           <button
             id="add-new-todo-button"
-            class="group-data-[is-adding=true]:hidden text-blue-800 flex shadow w-full p-2 cursor-pointer rounded-sm hover:bg-gray-50"
+            class="group-data-[is-adding=true]:hidden text-blue-800 dark:text-blue-300 flex shadow w-full p-2 cursor-pointer rounded-sm hover:bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-900"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@
             <input
               type="text"
               name="new-task"
-              class="shadow h-12 border-none ring-2 ring-blue-200 p-2"
+              class="shadow h-12 border-none ring-2 ring-blue-200 p-2 dark:text-white"
             />
             <button
               class="w-full p-2 bg-blue-800 text-white cursor-pointer hover:bg-blue-900"
@@ -63,10 +63,10 @@
           id="doing-section"
           class="p-2 group flex flex-col gap-4"
         >
-          <h2>Doing</h2>
+          <h2 class="dark:text-gray-200">Doing</h2>
           <button
             id="add-new-doing-task-button"
-            class="group-data-[is-adding=true]:hidden text-blue-800 flex shadow w-full p-2 cursor-pointer rounded-sm hover:bg-gray-50"
+            class="group-data-[is-adding=true]:hidden text-blue-800 dark:text-blue-300 flex shadow w-full p-2 cursor-pointer rounded-sm hover:bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-900"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
             <input
               type="text"
               name="new-task"
-              class="shadow h-12 border-none ring-2 ring-blue-200 p-2"
+              class="shadow h-12 border-none ring-2 ring-blue-200 p-2 dark:text-white"
             />
             <button
               class="w-full p-2 bg-blue-800 text-white cursor-pointer hover:bg-blue-900"
@@ -106,7 +106,9 @@
         </section>
       </div>
       <template id="todo-item-template">
-        <li class="hover:bg-gray-50 flex">
+        <li
+          class="hover:bg-gray-50 flex dark:text-white dark:bg-gray-900 dark:hover:bg-gray-800"
+        >
           <span class="todo-text"></span>
           <button
             class="delete-btn text-red-500 hover:text-red-700 ml-auto cursor-pointer hover:scale-110 transition-transform"
