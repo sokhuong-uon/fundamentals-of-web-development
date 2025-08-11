@@ -2,22 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script defer src="js/index.js"></script>
+    <title>Vite App</title>
   </head>
   <body>
-    <main class="flex">
-      <div class="mx-auto mt-4">
-        <form id="todo-form">
-          <input id="new-todo" type="text" class="border-2" placeholder="What to do...">
-          <button class="bg-green-700 p-1 rounded-md">Submit</button>
-        </form>
+    <div id="app">
+      <h1 class="mb-4">Software Development Project</h1>
+      <div class="flex gap-6">
+        <div
+          id="todo-tasks-container"
+          data-show-form="false"
+          class="border space-y-4 p-4 group"
+        >
+          <h2 class="font-semibold">Not started</h2>
 
-        <ul id="todos">
-        </ul>
+          <button id="add-task-button" class="w-56 shadow-md p-2 border cursor-pointer">
+            + Add task
+          </button>
+
+          <form
+            id="new-todo-form"
+            class="border-amber-500 hidden group-data-[show-form='true']:flex flex-col gap-4 shadow-md p-2"
+          >
+            <input
+              name="new-todo"
+              type="text"
+              placeholder="new task"
+              class="border p-2"
+            />
+            <input
+              name="new-todo-item-count"
+              type="number"
+              placeholder="new task"
+              class="border p-2"
+            />
+            <button class="bg-blue-600 p-2 text-white">Add task</button>
+          </form>
+
+          <ul class=""></ul>
+        </div>
+
+        <div class="border">
+          <h2>In progress</h2>
+          <button>+ Add task</button>
+        </div>
       </div>
-    </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
