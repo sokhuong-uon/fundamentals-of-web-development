@@ -1,5 +1,3 @@
-import { age, name } from "./counter";
-
 const addTaskButton = document.getElementById("add-task-button");
 const todoTaskContainer = document.getElementById("todo-tasks-container");
 
@@ -27,5 +25,3 @@ newTodoForm.onsubmit = (event) => {
 
   newTodoForm.reset();
 };
-
-console.log(age, name);
