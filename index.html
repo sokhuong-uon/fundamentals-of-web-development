@@ -35,7 +35,28 @@
             <button class="bg-blue-600 p-2 text-white">Add task</button>
           </form>
 
-          <ul class=""></ul>
+          <ul class="list min-h-12"></ul>
+          <template id="todo-item-template">
+            <li class="shadow p-2 flex items-center">
+              <span class="todo-item-text"></span>
+              <button class="cursor-pointer ml-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </li>
+          </template>
         </div>
 
         <div class="border">
