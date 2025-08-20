@@ -7,6 +7,9 @@ const newTodoForm = document.getElementById("new-todo-form");
 
 addTaskButton.addEventListener("click", () => {
   todoTaskContainer.dataset.showForm = true;
+  
+  const todoInputElement = newTodoForm.querySelector("[name='new-todo']");
+  todoInputElement.focus();
 });
 
 newTodoForm.onsubmit = (event) => {
@@ -14,7 +17,12 @@ newTodoForm.onsubmit = (event) => {
   const formData = new FormData(newTodoForm);
 
   const inputData = Object.fromEntries(formData.entries());
-  console.log(inputData);
+  
+  if (inputData["new-todo"] === "") {
+    alert("Please enter a task");
+    return;
+  }
+
 
   const todoItemTemplate = document.getElementById("todo-item-template");
   const list = todoItemTemplate.content.cloneNode(true);
