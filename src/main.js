@@ -3,13 +3,17 @@ import { todoTaskObserver } from "./todo-task-observer.js";
 import { inProgressTaskObserver } from "./in-progress-task-observer.js";
 import { doneTaskObserver } from "./done-task-observer.js";
 
-const observable = new Observable();
+const todoTasks = []
+const inProgressTasks = []
+const doneTasks = []
 
-observable.addSubscriber(todoTaskObserver);
-observable.addSubscriber(inProgressTaskObserver);
-observable.addSubscriber(doneTaskObserver);
+const todoTask1 = new Observable();
 
-observable.sendNotification();
+todoTask1.addSubscriber(todoTaskObserver);
+todoTask1.addSubscriber(inProgressTaskObserver);
+todoTask1.addSubscriber(doneTaskObserver);
+
+todoTask1.updateStatus("done");
 
 
 const addTaskButton = document.getElementById("add-task-button");
