@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
+  <body class="dark:bg-gray-900 dark:text-white p-6">
     <div id="app">
-      <h1 class="mb-4">Software Development Project</h1>
+      <h1 class="mb-8 text-2xl font-bold">Software Development Project</h1>
       <div class="flex gap-6">
         <div
           id="todo-tasks-container"
           data-show-form="false"
-          class="border space-y-4 p-4 group"
+          class=" space-y-4 p-4 group border dark:border-gray-700 rounded-lg"
         >
           <h2 class="font-semibold">Not started</h2>
 
-          <button id="add-task-button" class="w-56 shadow-md p-2 border cursor-pointer">
+          <button id="add-task-button" class="w-56 shadow-md p-2 cursor-pointer bg-blue-500 text-white dark:bg-gray-700 rounded-md">
             + Add task
           </button>
 
           <form
             id="new-todo-form"
-            class="border-amber-500 hidden group-data-[show-form='true']:flex flex-col gap-4 shadow-md p-2"
+            class="border-amber-500 hidden group-data-[show-form='true']:flex flex-col gap-4 shadow-md p-2 dark:bg-gray-800"
           >
             <input
               name="new-todo"
@@ -61,7 +61,7 @@
 
         <div class="border">
           <h2>In progress</h2>
-          <button>+ Add task</button>
+          <button >+ Add task</button>
         </div>
       </div>
     </div>
