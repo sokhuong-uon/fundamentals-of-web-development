@@ -1,3 +1,17 @@
+import { Observable } from "./observable.js";
+import { todoTaskObserver } from "./todo-task-observer.js";
+import { inProgressTaskObserver } from "./in-progress-task-observer.js";
+import { doneTaskObserver } from "./done-task-observer.js";
+
+const observable = new Observable();
+
+observable.addSubscriber(todoTaskObserver);
+observable.addSubscriber(inProgressTaskObserver);
+observable.addSubscriber(doneTaskObserver);
+
+observable.sendNotification();
+
+
 const addTaskButton = document.getElementById("add-task-button");
 const todoTaskContainer = document.getElementById("todo-tasks-container");
 
